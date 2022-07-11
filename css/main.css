@@ -1,0 +1,164 @@
+/* Color Pallete */
+
+:root {
+  --color-primary: #2584ff;
+  --color-secondary: #00d9ff;
+  --color-accent: #ff3400;
+
+  --color-headings: #1b0760;
+  --color-body: #918ca4;
+}
+
+/* Typography */
+
+html {
+  /* equal to 10px, easily to work with rem unit */
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.4rem;
+  line-height: 1.5;
+  color: var(--color-body);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-headings);
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 7rem;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+p {
+  margin-top: 0;
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    font-size: 1.8rem;
+  }
+
+  h1 {
+    font-size: 8rem;
+  }
+
+  h2 {
+    font-size: 4rem;
+  }
+
+  h3 {
+    font-size: 2.4rem;
+  }
+}
+
+/* Links */
+
+a {
+  text-decoration: none;
+}
+
+.link-arrow {
+  color: var(--color-accent);
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.link-arrow::after {
+  content: '-->'; /* insert an anchor with .svg arrow  */
+  margin-left: 5px;
+}
+
+.link-arrow:hover::after {
+  margin-left: 10px;
+  transition: margin 0.15s;
+}
+
+@media screen and (min-width: 1024px) {
+  .link-arrow {
+    font-size: 1.5rem;
+  }
+}
+
+/* Badges */
+
+.bagde {
+  border-radius: 20px;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 0.5rem 2rem;
+  white-space: nowrap;
+}
+
+.bagde--primary {
+  /* BEM - Block Element Modifier - Use two -- we separete the modifier to the component */
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.bagde--secondary {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+.bagde--small {
+  font-size: 1.6rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .bagde {
+    font-size: 1.5rem;
+  }
+
+  .bagde--small {
+    font-size: 1.2rem;
+  }
+}
+
+/* Lists */
+
+.list {
+  color: var(--color-headings);
+  list-style: none;
+  padding-left: 0;
+}
+
+.list--inline .list__item {
+  /* Here we wanna to convert each list item for 
+  inline elements */
+  display: inline-block;
+  margin-right: 2rem;
+}
+
+.list--tick {
+  list-style-image: url(../images/tick.svg);
+  padding-left: 3rem;
+}
+
+.list--tick .list__item {
+  /* Here we NEED to use a nest code. Because if we remove
+  the .list--tick and use only .list__item, it'll be applied
+  for all .list__item elements and we don't wanna that. But 
+  we have almost always avoid nesting pratice */
+  padding-left: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 1024px){
+  .list--tick .list__item {
+    padding-left: 0;
+  }
+}
